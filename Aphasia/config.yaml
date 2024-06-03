@@ -1,0 +1,61 @@
+data_path: "Chronic_Data_Clean.csv"
+
+experiment_name: "Max_ACC_SMOTE"
+
+scoring: "accuracy"
+
+oversampling: True
+
+model_selection:
+  all_models: false
+  selected_models:
+    - "SVC_linear"
+
+number_of_trials: 500
+
+seed: 42
+
+cross_validation:
+  n_splits: 5
+  shuffle: true
+  random_state: 42
+
+scoring_metrics:
+  - "accuracy"
+  - "balanced_accuracy"
+  - "weighted_balanced_accuracy"
+  - "precision_macro"
+  - "recall_macro"
+  - "f1_macro"
+  - "f0.5_macro"
+  - "f2_macro"
+
+start: 0
+end: 25
+combinations:
+  - [[0], [1], [2], [3], [4], [5]]
+  - [[0, 1], [2], [3], [4], [5]]
+  - [[0], [1, 2], [3], [4], [5]]
+  - [[0], [1], [2, 3], [4], [5]]
+  - [[0], [1], [2], [3, 4], [5]]
+  - [[0], [1], [2], [3], [4, 5]]
+  - [[0], [1], [2, 3, 4], [5]]
+  - [[0], [1], [2, 3], [4, 5]]
+  - [[0], [1], [2], [3, 4, 5]]
+  - [[0], [1, 2], [3, 4], [5]]
+  - [[0], [1, 2], [3], [4, 5]]
+  - [[0], [1, 2, 3], [4], [5]]
+  - [[0, 1], [2], [3], [4, 5]]
+  - [[0, 1], [2], [3, 4], [5]]
+  - [[0, 1], [2, 3], [4], [5]]
+  - [[0, 1, 2], [3], [4], [5]]
+  - [[0], [1, 2, 3, 4], [5]]
+  - [[0], [1, 2, 3], [4, 5]]
+  - [[0], [1, 2], [3, 4, 5]]
+  - [[0], [1], [2, 3, 4, 5]]
+  - [[0, 1], [2, 3, 4], [5]]
+  - [[0, 1], [2, 3], [4, 5]]
+  - [[0, 1], [2], [3, 4, 5]]
+  - [[0, 1, 2], [3, 4], [5]]
+  - [[0, 1, 2], [3], [4, 5]]
+  - [[0, 1, 2, 3], [4], [5]]
